@@ -1,14 +1,13 @@
-# ph-epg
+# PH EPG compatibility mirror
 
-Rebuilds an XMLTV guide for a Philippine IPTV playlist every 6 hours and publishes it on GitHub Pages.
+The EPG project has been consolidated into [ph-tv-playlist](https://github.com/tr3nching/ph-tv-playlist).
 
-- `config.json`: playlist URL, source feeds (in priority order), manual aliases (`playlist tvg-id` -> `source channel id`), and excluded channels.
-- `build.mjs`: downloads the playlist and feeds, matches channels, writes `dist/epg.xml`, `epg.xml.gz`, `report.txt`.
-- The job fails (and the previous guide stays live) if fewer than `minChannels` channels match.
+That repository contains **one EPG builder** (`scripts/update_epg.py`), **one M3U builder** (`scripts/refresh.mjs`), and the merged source/channel configuration (`epg-config.json`). The earlier builder and configuration remain recoverable in this repository's Git history.
 
-## Setup
-1. Push to GitHub, then Settings > Pages > Source: **GitHub Actions**.
-2. Run the workflow once (Actions > Update EPG > Run workflow).
-3. Set the playlist header to `x-tvg-url="https://<user>.github.io/<repo>/epg.xml.gz"`.
+Use the combined playlist, which includes its EPG URL automatically:
+https://tr3nching.github.io/ph-tv-playlist/playlist-combined.m3u
 
-Check `report.txt` on the Pages site for channels with no guide; add an alias in `config.json` to fix a bad or missing match.
+Current EPG:
+https://tr3nching.github.io/ph-tv-playlist/epg.xml.gz
+
+This repository no longer builds an EPG or downloads source feeds. Its workflow only copies the already-generated guide and status report from the consolidated project, keeping the old `ph-epg/epg.xml.gz` address working for existing TV configurations. A failed copy preserves the previous deployment.

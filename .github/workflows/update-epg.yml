@@ -1,8 +1,8 @@
-name: Update EPG
+name: Mirror consolidated EPG for existing clients
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # every 6 hours (UTC)
+    - cron: '25,55 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -17,25 +17,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Build EPG
-        run: node --max-old-space-size=6000 build.mjs dist
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
+  mirror:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Copy published guide without rebuilding
+        run: |
+          mkdir -p dist
+          for asset in epg.xml epg.xml.gz epg-status.json report.txt; do
+            curl --fail --location --retry 2 --max-time 60 "https://tr3nching.github.io/ph-tv-playlist/$asset" --output "dist/$asset"
+          done
+          cat > dist/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8"><title>PH EPG has moved</title><h1>PH EPG</h1><p>The playlist and EPG builders are now in <a href="https://github.com/tr3nching/ph-tv-playlist">ph-tv-playlist</a>.</p><p><a href="https://tr3nching.github.io/ph-tv-playlist/playlist-combined.m3u">Combined playlist with automatic EPG</a></p><p><a href="epg.xml.gz">Compatibility guide mirror</a></p>
+          HTML
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Publish compatibility mirror
+        id: deployment
+        uses: actions/deploy-pages@v5
