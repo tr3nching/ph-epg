@@ -1,0 +1,36 @@
+{
+  "playlistUrl": "https://tr3nching.github.io/iyad-tv-playlist/playlist-drm.m3u",
+  "minChannels": 100,
+  "exclude": ["Metro Channel", "MYX", "Star TV Philippines", "Hope Channel PH", "TVN", "KBS World", "Kids TV", "TBN Asia", "Cartoon Channel PH", "Celestial Movies Pinoy"],
+  "sources": [
+    { "name": "PH2", "url": "https://epgshare01.online/epgshare01/epg_ripper_PH2.xml.gz" },
+    { "name": "pw", "url": "https://epg.pw/xmltv/epg_PH.xml.gz" },
+    { "name": "SG1", "url": "https://epgshare01.online/epgshare01/epg_ripper_SG1.xml.gz" },
+    { "name": "HK1", "url": "https://epgshare01.online/epgshare01/epg_ripper_HK1.xml.gz" },
+    { "name": "MY1", "url": "https://epgshare01.online/epgshare01/epg_ripper_MY1.xml.gz" },
+    { "name": "ID1", "url": "https://epgshare01.online/epgshare01/epg_ripper_ID1.xml.gz" },
+    { "name": "TH1", "url": "https://epgshare01.online/epgshare01/epg_ripper_TH1.xml.gz" },
+    { "name": "AU1", "url": "https://epgshare01.online/epgshare01/epg_ripper_AU1.xml.gz" },
+    { "name": "UK1", "url": "https://epgshare01.online/epgshare01/epg_ripper_UK1.xml.gz" },
+    { "name": "US2", "url": "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz" },
+    { "name": "KR1", "url": "https://epgshare01.online/epgshare01/epg_ripper_KR1.xml.gz" },
+    { "name": "BEIN1", "url": "https://epgshare01.online/epgshare01/epg_ripper_BEIN1.xml.gz" },
+    { "name": "AMCCHANNELS1", "url": "https://epgshare01.online/epgshare01/epg_ripper_AMCCHANNELS1.xml.gz" },
+    { "name": "ASIANTELEVISION1", "url": "https://epgshare01.online/epgshare01/epg_ripper_ASIANTELEVISION1.xml.gz" },
+    { "name": "ALJAZEERA1", "url": "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz" },
+    { "name": "US_SPORTS1", "url": "https://epgshare01.online/epgshare01/epg_ripper_US_SPORTS1.xml.gz" },
+    { "name": "PLEX1", "url": "https://epgshare01.online/epgshare01/epg_ripper_PLEX1.xml.gz" }
+  ],
+  "alias": {
+    "Bilyonaryo": "Bilyonaryo.News.Channel.ph",
+    "GMA": "GMA.ph", "GTV": "GTV.ph", "Peoples Television": "PTV.ph", "IBC13": "IBC.13.ph",
+    "Kapamilya Channel": "Kapamilya.Channel.ph", "Kapamilya Channel HD": "Kapamilya.Channel.ph",
+    "TV5": "TV5.ph", "A2Z": "A2Z.ph", "ANC": "ANC.ph", "Net25": "Net.25.ph", "Metro Channel": "Metro.Channel.ph",
+    "Jeepney TV": "Jeepney.TV.ph", "CinemaOne": "Cinema.One.ph", "Pinoy Box Office": "PBO.ph",
+    "DepEd TV": "DepEd.TV.ph", "TV Maria": "TV.Maria.ph", "PBA Rush": "PBA.Rush.ph", "MYX": "MYX.ph",
+    "Tagalized Movie Channel": "Tagalized.Movie.Channel.ph", "VIVA Cinema": "VIVA.Cinema.ph",
+    "Sky Sports F1": "F1F.ph", "SOLARFLIX": "Solar.Flix.ph", "Tap Action Flix": "TAP.Movies.HD.ph",
+    "TAP Edge": "Tap.Sports.ph", "Bloomberg": "Bloomberg.ph", "Abante Radyo": "ABANTE.ph",
+    "CRIME INVESTIGATION": "Crime.Investigation.ph", "Discovery Asia": "Discovery.Channel.ph"
+  }
+}
