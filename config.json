@@ -436,13 +436,21 @@
   {
    "name": "PLEXMJH",
    "url": "https://i.mjh.nz/Plex/all.xml.gz"
+  },
+  {
+   "name": "MEDIAQUEST",
+   "url": "https://raw.githubusercontent.com/djdoolky76/Mediaquest-EPG/main/cignal_epg.xml.gz"
+  },
+  {
+   "name": "CIGNALMERGED",
+   "url": "https://raw.githubusercontent.com/atone77721/CIGNAL_EPG/main/merged_epg.xml.gz"
   }
  ],
  "alias": {
   "Bilyonaryo": "Bilyonaryo.News.Channel.ph",
   "GMA": "GMA.ph",
   "GTV": "GTV.ph",
-  "Peoples Television": "PTV.ph",
+  "Peoples Television": "cg_ptv4_sd",
   "IBC13": "IBC.13.ph",
   "Kapamilya Channel": "Kapamilya.Channel.ph",
   "Kapamilya Channel HD": "Kapamilya.Channel.ph",
@@ -456,7 +464,7 @@
   "Pinoy Box Office": "PBO.ph",
   "DepEd TV": "DepEd.TV.ph",
   "TV Maria": "TV.Maria.ph",
-  "PBA Rush": "PBA.Rush.ph",
+  "PBA Rush": "cg_pbarush_hd1",
   "MYX": "MYX.ph",
   "Tagalized Movie Channel": "Tagalized.Movie.Channel.ph",
   "VIVA Cinema": "VIVA.Cinema.ph",
@@ -475,6 +483,9 @@
   "MIRAMAX": "plex.tv.Miramax.Movie.Channel.plex",
   "Anime by Pluto": "5dcde17bf6591d0009839e02",
   "XFC TV": "697140a85d851f5e69414688-621670feab2095ca85353ad4",
-  "amasian tv Anime 24/7": "6a1610bebdf296985fd95603-6838eb6a38304666c89d4e3d"
- }
+  "amasian tv Anime 24/7": "6a1610bebdf296985fd95603-6838eb6a38304666c89d4e3d",
+  "TapSILOG": "tapsilog",
+  "DZMM Teleradyo": "DZMM.dzmm"
+ },
+ "fuzzy": true
 }
