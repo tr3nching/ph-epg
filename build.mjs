@@ -71,9 +71,10 @@ for (const src of config.sources) {
     const lev = (a, b) => { if (Math.abs(a.length - b.length) > 1) return 9; const d = Array.from({ length: a.length + 1 }, (_, i) => [i]); for (let j = 1; j <= b.length; j++) d[0][j] = j; for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)); return d[a.length][b.length]; };
     const fz = () => config.fuzzy && list.find(ch => [...ch.names, ch.id.replace(/.[a-z0-9_]{2,}$/i, '').replace(/[._]/g, ' ')].some(n => keys(n).some(k2 => k2.length >= 6 && [...ks].some(k => k.length >= 6 && (k === k2 || lev(k, k2) <= 1 || (Math.min(k.length, k2.length) >= 8 && (k.includes(k2) || k2.includes(k))))))));
     let fuzzy = false;
-    const hit = (alias && list.find(ch => ch.id === alias)) ||
+    const byAlias = alias ? list.find(ch => ch.id === alias) : null;
+    const hit = byAlias || ((alias && (config.strict || []).includes(c.id)) ? null :
       list.find(ch => ch.names.some(n => keys(n).some(k => ks.has(k))) ||
-        keys(ch.id.replace(/\.[a-z]{2}$/, '').replace(/\./g, ' ')).some(k => ks.has(k)));
+        keys(ch.id.replace(/\.[a-z]{2}$/, '').replace(/\./g, ' ')).some(k => ks.has(k))));
     if (!hit) continue;
     found.set(c.id, { source: src.name, sourceId: hit.id });
     programmes.set(c.id, byChannel.get(hit.id));

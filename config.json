@@ -448,9 +448,10 @@
  ],
  "alias": {
   "Bilyonaryo": "Bilyonaryo.News.Channel.ph",
-  "GMA": "GMA.ph",
   "GTV": "GTV.ph",
   "Peoples Television": "cg_ptv4_sd",
+  "GMA": "GMA.Pinoy.TV..sg",
+  "GMA Pinoy TV": "GMA.Pinoy.TV..sg",
   "IBC13": "IBC.13.ph",
   "Kapamilya Channel": "Kapamilya.Channel.ph",
   "Kapamilya Channel HD": "Kapamilya.Channel.ph",
@@ -487,5 +488,9 @@
   "TapSILOG": "tapsilog",
   "DZMM Teleradyo": "DZMM.dzmm"
  },
- "fuzzy": true
+ "fuzzy": true,
+ "strict": [
+  "GMA",
+  "GMA Pinoy TV"
+ ]
 }
